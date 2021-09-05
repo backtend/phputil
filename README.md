@@ -31,3 +31,9 @@ composer require backtend/phputil
 < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 
 < 1.0.0-rc.1 < 1.0.0
 ```
+
+# github
+```
+git config user.name backtend
+git config user.email backtend@gmail.com
+```
