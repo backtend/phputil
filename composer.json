@@ -1,0 +1,36 @@
+{
+  "name": "backtend/phputil",
+  "description": "A PHP Util Package",
+  "license": "Apache-2.0",
+  "type": "library",
+  "authors": [
+    {
+      "name": "backtend",
+      "email": "backtend@gmail.com"
+    }
+  ],
+  "keywords": [
+    "phputil",
+    "halt",
+    "dump"
+  ],
+  "require": {
+    "php": "^7.0 || ^8.0"
+  },
+  "require-dev": {
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "backtend\\phputil\\": "src/"
+    },
+    "files": [
+      "src/functions.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "backtend\\phputil\\": "tests/"
+    }
+  }
+}
