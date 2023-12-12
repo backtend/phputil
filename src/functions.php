@@ -41,3 +41,24 @@ if (!function_exists('dumps')) {
         echo $output;
     }
 }
+
+
+
+if (!function_exists('shows')) {
+    /**
+     * 显示html居中
+     * @param $title
+     * @param string $intro
+     */
+    function shows($title, $intro = '')
+    {
+        $htmls = [];
+        $htmls[] = '<div style="padding: 2rem;font-size: x-large" align="center">';
+        $htmls[] = sprintf('<h1>%s</h1>', $title);
+        if ($intro) {
+            $htmls[] = sprintf('<h4 style="padding: 1rem;color: grey">%s</h4>', $intro);
+        }
+        $htmls[] = '</div>';
+        exit(join("\n", $htmls));
+    }
+}
