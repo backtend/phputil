@@ -62,3 +62,26 @@ if (!function_exists('shows')) {
         exit(join("\n", $htmls));
     }
 }
+
+
+if (!function_exists('rests')) {
+    /**
+     * json 响应
+     * @param int $code
+     * @param null $data
+     * @param null $option
+     */
+    function rests(int $code, $data = null, $option = null)
+    {
+        $code = $data === false ? 404 : $code;//halts(func_get_args());
+        $msg = is_string($data) ? $data : (is_string($option) ? $option : sprintf('http-%d', $code));
+        if ((is_array($data) and isset($data[0])) or (is_array($data) and !sizeof($data))) {
+            $data = ['list' => $data];
+        } elseif (empty($data) or $data === true or is_string($data)) {
+            $data = new \stdClass();//as object
+        }
+        //http code as same as json code value
+        header('Content-Type:application/json; charset=utf-8');
+        exit(json_encode(['code' => $code, 'msg' => $msg, 'data' => $data, 'rid' => uniqid(sprintf('v202312-%.4f-', microtime(true)))]));
+    }
+}
